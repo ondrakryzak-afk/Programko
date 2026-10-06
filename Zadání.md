@@ -6,7 +6,7 @@ zadání:
 Úkol 1: Údaje o sportovci
 
 1. Deklaruje proměnnou klub typu string a uloží do ní název sportovního klubu.
-2. Deklaruje proměnnou kategorie typu char s hodnotou 'T.
+2. Deklaruje proměnnou kategorie typu char s hodnotou T.
 3. Deklaruje proměnnou clenskyPoplatek typu decimal s hodnotou 350.5.
 4. Deklaruje proměnnou nejlepsiCas typu float s hodnotou 12.4.
 5. Deklaruje proměnnou maLicenci typu bool s hodnotou true
