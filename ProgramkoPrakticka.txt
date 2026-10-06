@@ -1,0 +1,111 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // ÚKOL 1
+
+        string sportklub = "SOSTP"; // string = "txt"
+        char kategorie = 'J'; // char = 'txt'
+        decimal clenskyPoplatek = 350.5m; // decimal = hodnota+m na konci
+        float nejlepsiCas = 12.4f; // float = hodnota+f na konci 
+        bool maLicenci = true; // true or false
+
+        Console.Write("Jaké je vaše jméno?: ");
+        string jmenoUzivatele = Console.ReadLine();
+        Console.Write("Kolik let už trénuješ?: ");
+        int trenujeLet = Convert.ToInt32(Console.ReadLine()); // int > ReadLine musí vždy být přečtený jako Integer!!! dá se využít také = int.Parse místo Convert.ToInt32. Int32=32bajtů = omezený rozsah čísel od několika - milliard do + milliard, menší omezení má long.Parse
+        // dál už nevysvětluju bo jsem lazy
+        Console.Write("Jaká je vaše výška v metrech?: ");
+        double vyska = double.Parse(Console.ReadLine());
+        int rokZacatku = 2026 - trenujeLet;
+
+        Console.WriteLine("=== ÚDAJE O SPORTOVCI ===");
+        Console.WriteLine($"Jméno: {jmenoUzivatele}");
+        Console.WriteLine($"Klub: {sportklub}");
+        Console.WriteLine($"Máš licenci?: {maLicenci}");
+        Console.WriteLine($"Nejlepší čas: {nejlepsiCas}");
+        Console.WriteLine($"Výška: {vyska}");
+        Console.WriteLine($"Kategorie: {kategorie}");
+        Console.WriteLine($"Člesný poplatek: {clenskyPoplatek}");
+        Console.WriteLine("================");
+        Console.WriteLine($"Trénuješ od roku: {rokZacatku}");
+        Console.WriteLine("================");
+
+        // stisknutí libovolné klávesy pro pokračování na úkol 2
+
+        Console.Write("Pokračovat na výpočet času: ...");
+        string pokracovat = Console.ReadLine();
+
+        // ÚKOL 2
+
+        int[] poleHodu = { 6, 2, 4, 6, 1, 3, 6, 5, 2, 6 };
+
+        Console.WriteLine("Zadej hledané číslo: ");
+        int hledaneCislo = int.Parse(Console.ReadLine());
+
+        int vysledek = PocetHodu(poleHodu, hledaneCislo);
+
+        Console.WriteLine($"Číslo {hledaneCislo} padlo {vysledek}x.");
+
+        static int PocetHodu(int[] pole, int hledaneCislo)
+        {
+            int pocet = 0;
+
+            foreach (int x in pole)
+            {
+                if (x == hledaneCislo)
+                {
+                    pocet++;
+
+                }
+
+            }
+            return pocet;
+        }
+
+        // stisknutí libovolné klávesy pro pokračování na úkol 3
+
+        Console.Write("Pokračovat na výpočet času: ...");
+        string Pokracovat = Console.ReadLine();
+
+        // ÚKOL 3
+
+        double[] poleCasu = { 12.5, 15.0, 9.5, 20.0, 14.5, 11.0, 18.5 };
+
+        double soucet = VypocitejSoucet(poleCasu);
+        double prumer = VypocitejPrumer(poleCasu);
+
+
+
+
+
+        Console.WriteLine("Celkový čas: " + soucet + " minut.");
+        Console.WriteLine("Průměrná doba cesty: " + prumer + " minut.");
+
+
+        static double VypocitejSoucet(double[] pole)
+        {
+            double soucet = 0;
+
+            foreach (double cas in pole)
+            {
+                soucet = soucet + cas;
+            }
+
+            return soucet;
+        }
+
+        static double VypocitejPrumer(double[] pole)
+        {
+            double soucet = VypocitejSoucet(pole);
+
+            return soucet / pole.Length;
+
+
+
+        }
+
+    }
+}
