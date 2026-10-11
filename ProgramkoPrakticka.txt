@@ -45,67 +45,37 @@ class Program
         Console.WriteLine("Zadej hledané číslo: ");
         int hledaneCislo = int.Parse(Console.ReadLine());
 
-        int vysledek = PocetHodu(poleHodu, hledaneCislo);
+        int pocet = 0;
 
-        Console.WriteLine($"Číslo {hledaneCislo} padlo {vysledek}x.");
-
-        static int PocetHodu(int[] pole, int hledaneCislo)
+    for (int i = 0; i < poleHodu.Length; i++)
+    {
+        if (poleHodu[i] == hledaneCislo)
         {
-            int pocet = 0;
-
-            foreach (int x in pole)
-            {
-                if (x == hledaneCislo)
-                {
-                    pocet++;
-
-                }
-
-            }
-            return pocet;
+        pocet++;
         }
+    }
 
-        // stisknutí libovolné klávesy pro pokračování na úkol 3
+Console.WriteLine($"Číslo {hledaneCislo} padlo {pocet}x.");
+
+        
+// stisknutí libovolné klávesy pro pokračování na úkol 3
 
         Console.Write("Pokračovat na výpočet času: ...");
         string Pokracovat = Console.ReadLine();
 
         // ÚKOL 3
 
-        double[] poleCasu = { 12.5, 15.0, 9.5, 20.0, 14.5, 11.0, 18.5 };
+        
+double[] poleCasu = { 12.5, 15.0, 9.5, 20.0, 14.5, 11.0, 18.5 };
 
-        double soucet = VypocitejSoucet(poleCasu);
-        double prumer = VypocitejPrumer(poleCasu);
+double soucet = 0;
 
-
-
-
-
-        Console.WriteLine("Celkový čas: " + soucet + " minut.");
-        Console.WriteLine("Průměrná doba cesty: " + prumer + " minut.");
-
-
-        static double VypocitejSoucet(double[] pole)
-        {
-            double soucet = 0;
-
-            foreach (double cas in pole)
-            {
-                soucet = soucet + cas;
-            }
-
-            return soucet;
-        }
-
-        static double VypocitejPrumer(double[] pole)
-        {
-            double soucet = VypocitejSoucet(pole);
-
-            return soucet / pole.Length;
-
-
-
-        }
-
-    }
+for (int i = 0; i < poleCasu.Length; i++)
+{
+    soucet = soucet + poleCasu[i];
 }
+
+double prumer = soucet / poleCasu.Length;
+
+Console.WriteLine("Celkový čas: " + soucet + " minut.");
+Console.WriteLine("Průměrná doba cesty: " + prumer + " minut.");
