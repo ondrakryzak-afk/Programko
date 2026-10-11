@@ -42,7 +42,7 @@ class Program
 
         int[] poleHodu = { 6, 2, 4, 6, 1, 3, 6, 5, 2, 6 };
 
-        Console.WriteLine("Zadej hledané číslo: ");
+        Console.Write("Zadej hledané číslo: ");
         int hledaneCislo = int.Parse(Console.ReadLine());
 
         int pocet = 0;
