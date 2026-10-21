@@ -1,0 +1,35 @@
+# Příprava na test C# základní algoritmizační úlohy (2.11 - 6.11)
+Úkol 1 – Pole a cyklus
+ 
+Je zadáno pole hodnot poleHodnot typu double:
+
+double[] poleHodnot = { 4.4, 5, 2.1, -3.2, 4.1, 2.3 };
+
+1. Vypište všechny hodnoty, které jsou větší než 2.
+
+2. Vypište počet hodnot větších než 2.
+ 
+Úkol 2 – Funkce s návratovou hodnotou
+ 
+Vytvořte funkci VypocitejPrumer, která vypočítá aritmetický průměr hodnot v poli.
+
+- Funkce bude mít návratový typ double.
+
+- Parametrem funkce bude pole hodnot typu double.
+
+- Funkce vrátí vypočítaný průměr.
+
+- Výsledek vypište v hlavním programu. Využijte pole z první úlohy.
+ 
+Úkol 3 – Funkce typu void
+ 
+Vytvořte funkci VypocetPovrchuKrychle, která vypočítá a vypíše povrch krychle.
+
+- Funkce bude mít návratový typ void.
+
+- Parametrem funkce bude délka hrany krychle typu double.
+
+- Povrch krychle se vypočítá podle vzorce (S = 6a^2).
+
+- Funkce vypíše vypočítaný povrch.
+ 
