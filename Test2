@@ -1,0 +1,45 @@
+
+Console.WriteLine("Opakování");
+
+double[] poleHodnot = { 4.4, 5, 2.1, -3.2, 4.1, 2.3 };
+
+// úkol 1
+ int pocetCiselVetsiNezDva = 0;
+for (int i = 0; i < poleHodnot.Length; i++)
+{   
+    if (poleHodnot[i] > 2)
+    {
+        Console.WriteLine(poleHodnot[i]);
+        pocetCiselVetsiNezDva++; //pocet cisel +=1 // pocetcisel.. = pocetcisel +1;
+    }
+   
+}
+
+ Console.WriteLine($"Čísel větších než 2 je: {pocetCiselVetsiNezDva}");
+
+
+
+// uloha 2
+
+
+static double vypocitejPrumer(double[] pole)
+
+{
+    double soucet = 0;
+
+    for (int i = 0; i < pole.Length; i++)
+    {
+        soucet += pole[i]; // return pole.Average();
+    }
+    return soucet / pole.Length;
+}
+  
+
+Console.WriteLine($"Aritmetický průměr: {Math.Round(vypocitejPrumer(poleHodnot), 2)}");
+// uloha c 3
+static void VypocetPovrchuKrychle(double a)
+{
+    double povrchKrychle = 6 * a * a;
+    Console.WriteLine($"Povrch krychle: {povrchKrychle}" );
+}
+VypocetPovrchuKrychle(6);
