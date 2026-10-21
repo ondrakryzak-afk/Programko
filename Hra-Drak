@@ -1,0 +1,70 @@
+Console.WriteLine("NASYT DRAKA NA 100%!");
+ 
+ 
+ 
+Console.Write("Jaké je jméno draka?: ");
+string jmeno = Console.ReadLine();
+decimal zlataky = 16.00m;
+int sytost = 0;
+double vaha = 50;
+int kolo = 0;
+bool konec = false;
+ 
+while(sytost < 100 && !konec)
+{
+    kolo++;
+    Console.WriteLine($"\n--- Kolo {kolo} ---");
+    Console.WriteLine($"{jmeno}: sytost {sytost} %, váha {vaha} kg, zlato {zlataky}");
+    Console.WriteLine("[J] jablko (1,50 zl.) [O] ovce (6.00zl) [K] konec");
+    Console.WriteLine("Čím nakrmíš draka?: ");
+    //! char Console.ReadLine()
+    char volba = char.ToUpper(Console.ReadKey().KeyChar);
+    Console.WriteLine();
+ 
+    if (volba == 'J' && zlataky >= 1.5m)
+    {
+        zlataky -= 1.5m; // = zlato = zalot - 1,5m;
+        sytost += 10; // to samy 
+        vaha += 0.3; // to samy
+        Console.WriteLine("Mnam, jablicko");
+    }
+ 
+    else if (volba == 'O' && zlataky >= 6m)
+    {
+        zlataky -= 6m; // = zlato = zalot - 1,5m;
+        sytost += 35; // to samy 
+        vaha += 2.5; // to samy
+        Console.WriteLine("Mnam, ovecka");
+    }
+    else if (volba == 'K')
+    {
+        konec = true;
+    }
+ 
+    else
+    {
+        Console.WriteLine("Špatná klávesa nebo málo zlata...");
+    }
+ 
+    if (zlataky < 1.5m && sytost < 100)
+    {
+        Console.WriteLine($"Došlo ti zlato, zbylo ti jen {zlataky} zlata");
+        konec = true;
+    }
+ 
+ 
+}
+ 
+ 
+Console.WriteLine("\n====KONEC====");
+if (sytost >= 100)
+{
+    Console.WriteLine("\n====VÝHRA====");
+}
+else
+{
+    Console.WriteLine("\n====PROHRA====");
+    Console.WriteLine($"{jmeno} zůstal hladový");
+}
+ 
+Console.WriteLine($"Status: {zlataky} Zlata, {sytost} Sytosti, {vaha} Vaha.");
