@@ -21,6 +21,7 @@ for (int i = 0; i < poleHodnot.Length; i++)
 
 // uloha 2
 
+double[] poleHodnot = { 10, 20, 30, 40, 50 };
 
 static double vypocitejPrumer(double[] pole)
 
