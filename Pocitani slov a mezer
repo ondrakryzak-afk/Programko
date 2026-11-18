@@ -1,0 +1,66 @@
+using System;
+using System.Globalization;
+using System.Security.Cryptography;
+using System.Linq; // Hodí se pro přehlednější hledání
+ 
+string puvodniPrijmeni = "Martins Ferreira Pereira De Maghalhaes Mandová";
+string prijmeni = puvodniPrijmeni; // Kopie pro smazání mezer
+ 
+Console.ForegroundColor = ConsoleColor.Green;
+Console.BackgroundColor = ConsoleColor.Red;
+Console.WriteLine($"Délka příjmení včetně mezer: {puvodniPrijmeni.Length} znaků");
+Console.ResetColor();
+ 
+// mezery smažeme cyklem  while
+while (prijmeni.Contains(" "))
+{
+    prijmeni = prijmeni.Replace(" ", "");
+}
+Console.BackgroundColor = ConsoleColor.Blue;
+Console.ForegroundColor = ConsoleColor.White;
+Console.WriteLine($"Délka příjmení bez mezer: {prijmeni.Length} znaků");
+Console.ResetColor();
+ 
+//2 varianta počitani mezer
+int pocetPruchodu = 0;
+int pocetMezer = 0;
+while (puvodniPrijmeni.Length > pocetPruchodu)
+{
+    if (puvodniPrijmeni[pocetPruchodu] == ' ')
+    {
+        pocetMezer++;
+    }
+    pocetPruchodu++;
+}
+Console.BackgroundColor = ConsoleColor.Blue;
+Console.ForegroundColor = ConsoleColor.White;
+Console.WriteLine($"Pocet znaku bez mezer (2. způsob): {puvodniPrijmeni.Length - pocetMezer} znaku");
+Console.ResetColor();
+ 
+Console.WriteLine();
+ 
+string[] slova = puvodniPrijmeni.Split(' ');
+ 
+string nejkratsi = slova[0];
+string nejdelsi = slova[0];
+ 
+foreach (string slovo in slova)
+{
+    if (slovo.Length < nejkratsi.Length)
+    {
+        nejkratsi = slovo;
+    }
+    if (slovo.Length > nejdelsi.Length)
+    {
+        nejdelsi = slovo;
+    }
+}
+ 
+Console.BackgroundColor = ConsoleColor.DarkMagenta;
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine($"Nejkratší slovo: '{nejkratsi}' ({nejkratsi.Length} znaků)");
+Console.WriteLine($"Nejdelší slovo: '{nejdelsi}' ({nejdelsi.Length} znaků)");
+Console.ResetColor();
+ 
+Console.ReadKey();
+Console.Clear();
