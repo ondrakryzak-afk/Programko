@@ -1,0 +1,96 @@
+Console.WriteLine("Kámen - Nůžky - Papír");
+ 
+string[] volbaTxt = { "Kámen", "Nůžky", "Papír" };
+var nahodneCislo = new Random();
+int vitezstviHrac = 0;
+int vitezstviPocitac = 0;
+bool konec = false;
+ 
+while (konec != true)
+{
+    Console.WriteLine("1 - Kámen");
+    Console.WriteLine("2 - Nůžky");
+    Console.WriteLine("3 - Papír");
+ 
+    Console.Write("Zadej volbu: ");
+ 
+    int volbaHrac = int.Parse(Console.ReadLine());
+ 
+ 
+    switch (volbaHrac)
+    {
+        case 1:
+            volbaHrac = 0;
+            break;
+        case 2:
+            volbaHrac = 1;
+            break;
+        case 3:
+            volbaHrac = 2;
+            break;
+        default:
+            Console.WriteLine("Neplatná volba!");
+            Console.ReadKey();
+            continue;
+    }
+ 
+    int volbaPocitac;
+    //3 již nebude vybrána
+    volbaPocitac = nahodneCislo.Next(0, 3);
+ 
+    Console.WriteLine($"Volba hráč: {volbaTxt[volbaHrac]}");
+    Console.WriteLine($"Volba počítač:  {volbaTxt[volbaPocitac]}");
+ 
+ 
+    if(volbaHrac == volbaPocitac)
+    {
+        Console.WriteLine("Stejný volba, remíza!");
+    }
+    else if(volbaHrac == 0 && volbaPocitac == 1)
+    {
+        Console.WriteLine($"Kolo vyhrál hraáč!");
+        vitezstviHrac++;
+    }
+ 
+ 
+    if (volbaHrac == volbaPocitac)
+    {
+        Console.WriteLine("Stejný volba, remíza!");
+    }
+    else if (volbaHrac == 1 && volbaPocitac == 2)
+    {
+        Console.WriteLine($"Kolo vyhrál hraáč!");
+        vitezstviHrac++;
+    }
+ 
+    else if (volbaHrac == volbaPocitac)
+    {
+        Console.WriteLine("Stejný volba, remíza!");
+    }
+    else if (volbaHrac == 2 && volbaPocitac == 0)
+    {
+        Console.WriteLine($"Kolo vyhrál hraáč!");
+        vitezstviHrac++;
+    }
+ 
+    else
+    {
+        vitezstviPocitac++;
+    }
+ 
+    if(vitezstviHrac > 2)
+    {
+        Console.WriteLine("Vyhrál hráč");
+        konec = true;
+    }
+ 
+ 
+    if (vitezstviPocitac > 2)
+    {
+        Console.WriteLine("Vyhrál počítač");
+        konec = true;
+    }
+ 
+ 
+ 
+}
